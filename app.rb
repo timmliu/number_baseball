@@ -2,10 +2,10 @@
 #app.rb
 
 require "highline/import"
+require 'active_support/inflector'
 
 #guessing cycle
 def run_cycle
-	@cycles = 1
 	prompt_player
 	run_compare
 	if @strikes < 4
@@ -50,18 +50,21 @@ end
 
 #return hints (strikes and balls) to player
 def return_hints
-	puts "#{@strikes} strike & #{@balls} ball"
+	@strike_label = "strike".pluralize(@strikes)
+	@ball_label = "ball".pluralize(@balls)
+	puts "#{@strikes} #{@strike_label} & #{@balls} #{@ball_label}"
 end
 
 #display winner message
 def winner_msg
 	@number = @number.join
-	@num_guesses = pluralize( @cycles, 'guess' )
-	puts "You got it! The number is #{@number}!\n It took you #{@num_guesses}!"
+	@guess_label = "guess".pluralize(@cycles)
+	puts "You got it! The number is #{@number}!\n It took you #{@cycles} #{@guess_label}!"
 end
 
 #initialize
 generate_number
+@cycles = 1
 run_cycle
 while @strikes < 4 do
 	run_cycle
