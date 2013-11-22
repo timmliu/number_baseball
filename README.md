@@ -19,7 +19,6 @@ The app should respond with:
 
 *** Possible future improvements ***
 1. validate player entry
-2. display number of guesses
-3. add pluralization for strikes + balls
+2. add pluralization for strikes+balls and guesses
 
 ###end README###

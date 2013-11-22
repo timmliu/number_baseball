@@ -5,6 +5,7 @@ require "highline/import"
 
 #guessing cycle
 def run_cycle
+	@cycles = 1
 	prompt_player
 	run_compare
 	if @strikes < 4
@@ -12,6 +13,7 @@ def run_cycle
 	else
 		winner_msg
 	end
+	@cycles += 1
 end
 
 #generate 4 digit number without repeating digits
@@ -22,7 +24,8 @@ def generate_number
 	@c = (@set-[@a]-[@b]).sample
 	@d = (@set-[@a]-[@b]-[@c]).sample
 	@number = [@a,@b,@c,@d]
-	#FOR TESTING: print "#{@number}\n"
+	#FOR TESTING
+	print "#{@number}\n"
 end
 
 #prompt player for a guess
@@ -53,7 +56,7 @@ end
 #display winner message
 def winner_msg
 	@number = @number.join
-	puts "You got it! The number is #{@number}!"
+	puts "You got it! The number is #{@number}!\n It took you #{@cycles} guess(es)!"
 end
 
 #initialize
