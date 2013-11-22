@@ -25,7 +25,7 @@ def generate_number
 	@d = (@set-[@a]-[@b]-[@c]).sample
 	@number = [@a,@b,@c,@d]
 	#FOR TESTING
-	#print "#{@number}\n"
+	print "#{@number}\n"
 end
 
 #prompt player for a guess
@@ -56,7 +56,8 @@ end
 #display winner message
 def winner_msg
 	@number = @number.join
-	puts "You got it! The number is #{@number}!\n It took you #{@cycles} guess(es)!"
+	@num_guesses = pluralize( @cycles, 'guess' )
+	puts "You got it! The number is #{@number}!\n It took you #{@num_guesses}!"
 end
 
 #initialize

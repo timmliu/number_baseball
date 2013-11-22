@@ -18,7 +18,7 @@ The app should respond with:
 	2 ball
 
 *** Possible future improvements ***
-1. validate player entry
+1. validate player guess entry
 2. add pluralization for strikes+balls and guesses
 
 ###end README###
