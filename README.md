@@ -7,8 +7,8 @@ The app will generate a random 4 digit number that does not have any repeating d
 After each guess, the app will return hints to help you for your next guess.
 
 Hints work as follows:
-You get a strike for each guess that has the correct number with the correct position.
-You get a ball for each guess that has the correct number with an incorrect position.
+You get a "strike" for each guess that has the correct number with the correct position.
+You get a "ball" for each guess that has the correct number with an incorrect position.
 
 Example:
 The actual number is 1234.
