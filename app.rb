@@ -25,7 +25,7 @@ def generate_number
 	@d = (@set-[@a]-[@b]-[@c]).sample
 	@number = [@a,@b,@c,@d]
 	#FOR TESTING
-	print "#{@number}\n"
+	#print "#{@number}\n"
 end
 
 #prompt player for a guess
