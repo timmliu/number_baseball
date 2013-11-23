@@ -59,7 +59,7 @@ end
 def winner_msg
 	@number = @number.join
 	@guess_label = "guess".pluralize(@cycles)
-	puts "You got it! The number is #{@number}!\n It took you #{@cycles} #{@guess_label}!"
+	puts "You got it! The number is #{@number}!\nIt took you #{@cycles} #{@guess_label}!"
 end
 
 #initialize
