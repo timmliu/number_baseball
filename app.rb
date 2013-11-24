@@ -25,13 +25,18 @@ def generate_number
 	@d = (@set-[@a]-[@b]-[@c]).sample
 	@number = [@a,@b,@c,@d]
 	#FOR TESTING
-	#print "#{@number}\n"
+	print "#{@number}\n"
 end
 
 #prompt player for a guess
 def prompt_player
 	@guess_string = ask "Guess a 4 digit number: "
 	@guess_array = @guess_string.each_char.each_slice(1).map{|s| s.join}.collect{|s| s.to_i}
+	if (@guess_string =~ /^\d{4}$/) && (@guess_array.group_by{|x| x}.map{|k,v| [k,v.count]}.map{|k,v| v} == [1,1,1,1])
+	else
+		puts "*You must guess a 4 digit number with unique digits.\n"
+		prompt_player
+	end
 end
 
 #compare guess to actual

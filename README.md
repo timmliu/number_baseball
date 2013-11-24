@@ -15,9 +15,6 @@ The actual number is 1234.
 You guess 1428.
 The app should respond with:
 	1 strike
-	2 ball
-
-*** Possible future improvements ***
-1. validate player guess entry
+	2 balls
 
 ###end README###
