@@ -18,7 +18,7 @@ end
 
 #generate 4 digit number without repeating digits
 def generate_number
-	@set = (0..9).to_a
+  @set = (0..9).to_a
   @a = @set.sample
   @b = (@set-[@a]).sample
   @c = (@set-[@a]-[@b]).sample
