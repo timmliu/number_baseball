@@ -49,19 +49,15 @@ class Game
     end
   end
 
-  def is_number?(input)
-    input.to_s == input.to_i.to_s
-  end
-
   def split_digits(number)
     number.to_s.chars.map(&:to_i)
   end
 
   def valid?(guess)
-    if guess.length != 4 || !is_number?(guess)
+    if guess.to_i.to_s.length != 4
       @error_message = 'Your guess must be a 4 digit number.'
       false
-    elsif duplicate_digits?(guess)
+    elsif duplicate_digits?(guess.to_i)
       @error_message = 'Your guess must not contain duplicate digits.'
       false
     else
